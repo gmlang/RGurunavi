@@ -1,9 +1,10 @@
 ## author: gmlang
 
-get_areas = function(api_key = "eca7388c8a3c6332eb702a21bcc63b46",
-                     lang = "en") {
-        # Implements the Acquire Area Master API.
-        # Returns a data frame of area codes and names.
+get_areas_middle = function(api_key = "eca7388c8a3c6332eb702a21bcc63b46",
+                            lang = "en") {
+        # Implements the Acquire Area Middle Master API.
+        # Returns a data frame of middle and large area codes and names and
+        #       pref codes and names.
         #
         # api_key : string, your own Gurunavi API key. Ours has been provided
         #           for convenience.
@@ -12,12 +13,12 @@ get_areas = function(api_key = "eca7388c8a3c6332eb702a21bcc63b46",
 
         # set search parameters and base API url
         params = list(keyid = api_key, lang = lang, format = "xml")
-        base_url = "https://api.gnavi.co.jp/master/AreaSearchAPI/20150630/"
+        base_url = "https://api.gnavi.co.jp/master/GAreaMiddleSearchAPI/20150630/"
 
         # query and parse data
         xml_children = query_data(base_url, params)
 
         # extract data values
-        extract_simple(xml_children, self = "area")
+        extract_nested(xml_children, size = "m")
 }
 
