@@ -54,3 +54,16 @@ head(get_areas_small(lang = "ja"))
 head(get_areas_small(lang = "zh_cn"))
 head(get_areas_small(lang = "zh_tw"))
 head(get_areas_small(lang = "ko"))
+
+# Multi-language version Restaurant Search API
+head(get_shops(lang = "en", pref = "PREF27", areacode_s = "AREAS3144",
+               category_l = "RSFST02000", card = 1))
+head(get_shops(lang = "ja", pref = "PREF27",
+               category_l = "RSFST02000", category_s = "RSFST02001"))
+head(get_shops(lang = "zh_cn", pref = "PREF27",
+               chinese_menu = 1, chinese_speaking = 1))
+head(get_shops(lang = "zh_tw", pref = "PREF27",
+               chinese_menu = 1, wifi = 1, card = 1))
+head(get_shops(lang = "ko", pref = "PREF27", korean_speaking = 1,
+               korean_menu = 1))
+

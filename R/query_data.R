@@ -17,3 +17,6 @@ query_data = function(base_url, params) {
         parsed = xml2::read_xml(httr::content(request, "text"))
         xml2::xml_children(parsed)
 }
+
+
+
