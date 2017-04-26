@@ -15,15 +15,14 @@ extract_simple = function(leaves, self, foreign = NULL) {
 
         # extract self data
         df = data.frame(
-                sapply(xml2::xml_find_all(leaves, self_code), xml2::xml_text),
-                sapply(xml2::xml_find_all(leaves, self_name), xml2::xml_text)
+                xml2::xml_text(xml2::xml_find_all(leaves, self_code)),
+                xml2::xml_text(xml2::xml_find_all(leaves, self_name))
         )
         names(df) = c(self_code, self_name)
 
         # add foreign key
         if (!is.null(foreign)) df[[foreign_code]] =
-                sapply(xml2::xml_find_all(leaves, foreign_code),
-                       xml2::xml_text)
+                xml2::xml_text(xml2::xml_find_all(leaves, foreign_code))
 
         # return
         df

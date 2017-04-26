@@ -17,10 +17,10 @@ extract_nested = function(leaves, size) {
 
         # extract self data
         df = data.frame(
-                sapply(xml2::xml_find_all(leaves, self_code), xml2::xml_text),
-                sapply(xml2::xml_find_all(leaves, self_name), xml2::xml_text),
-                sapply(xml2::xml_find_all(leaves, pref_code), xml2::xml_text),
-                sapply(xml2::xml_find_all(leaves, pref_name), xml2::xml_text)
+                xml2::xml_text(xml2::xml_find_all(leaves, self_code)),
+                xml2::xml_text(xml2::xml_find_all(leaves, self_name)),
+                xml2::xml_text(xml2::xml_find_all(leaves, pref_code)),
+                xml2::xml_text(xml2::xml_find_all(leaves, pref_name))
                 )
         names(df) = c(self_code, self_name, gsub("pref/", "", pref_code),
                       gsub("pref/", "", pref_name))
@@ -32,11 +32,9 @@ extract_nested = function(leaves, size) {
                 code_search = paste0("garea_large/", self_l_code)
                 name_search = paste0("garea_large/", self_l_name)
                 df[[self_l_code]] =
-                        sapply(xml2::xml_find_all(leaves, code_search),
-                               xml2::xml_text)
+                        xml2::xml_text(xml2::xml_find_all(leaves, code_search))
                 df[[self_l_name]] =
-                        sapply(xml2::xml_find_all(leaves, name_search),
-                               xml2::xml_text)
+                        xml2::xml_text(xml2::xml_find_all(leaves, name_search))
         }
 
         if (size == "s") {
@@ -50,17 +48,13 @@ extract_nested = function(leaves, size) {
                 name_search_m = paste0("garea_middle/", self_m_name)
 
                 df[[self_l_code]] =
-                        sapply(xml2::xml_find_all(leaves, code_search_l),
-                               xml2::xml_text)
+                        xml2::xml_text(xml2::xml_find_all(leaves, code_search_l))
                 df[[self_l_name]] =
-                        sapply(xml2::xml_find_all(leaves, name_search_l),
-                               xml2::xml_text)
+                        xml2::xml_text(xml2::xml_find_all(leaves, name_search_l))
                 df[[self_m_code]] =
-                        sapply(xml2::xml_find_all(leaves, code_search_m),
-                               xml2::xml_text)
+                        xml2::xml_text(xml2::xml_find_all(leaves, code_search_m))
                 df[[self_m_name]] =
-                        sapply(xml2::xml_find_all(leaves, name_search_m),
-                               xml2::xml_text)
+                        xml2::xml_text(xml2::xml_find_all(leaves, name_search_m))
         }
 
         # return
