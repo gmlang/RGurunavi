@@ -88,16 +88,9 @@ get_areas_small(lang = "ko")
 
 Search Restaurants
 ``` r 
-get_shops(lang = "en", pref = "PREF27", 
-		  areacode_s = "AREAS3144", category_l = "RSFST02000",
-		  card = 1)
-get_shops(lang = "ja", pref = "PREF27",
-          category_l = "RSFST02000", 
-          category_s = "RSFST02001")
-get_shops(lang = "zh_cn", pref = "PREF27",
-          chinese_menu = 1, chinese_speaking = 1)
-get_shops(lang = "zh_tw", pref = "PREF27",
-          chinese_menu = 1, wifi = 1, card = 1)
-get_shops(lang = "ko", pref = "PREF27", 
-		  korean_speaking = 1, korean_menu = 1)
+get_shops(lang = "en", pref = "PREF27", areacode_s = "AREAS3144", category_l = "RSFST02000", card = 1)
+get_shops(lang = "ja", pref = "PREF27", category_l = "RSFST02000", category_s = "RSFST02001")
+get_shops(lang = "zh_cn", pref = "PREF27", chinese_menu = 1, chinese_speaking = 1)
+get_shops(lang = "zh_tw", pref = "PREF27", chinese_menu = 1, wifi = 1, card = 1)
+get_shops(lang = "ko", pref = "PREF27", korean_speaking = 1, korean_menu = 1)
 ```
