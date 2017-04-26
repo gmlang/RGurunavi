@@ -4,11 +4,7 @@ RGurunavi
 Overview
 --------
 
-A R wrapper of [Gurunavi's](https://www.gnavi.co.jp) API that supports 5 languages: Japanese, English, Simplified Chinese, Traditional Chinese, and Korean.
-
-Click [here](http://api.gnavi.co.jp/api/index_e.html) for the official API doc.
-
-You need an API key and ours is provided by default. To use your own, click [here](https://ssl.gnavi.co.jp/api/regist/?p=input) to register and obtain your own *key* first.
+A R wrapper of [Gurunavi's](https://www.gnavi.co.jp) API that supports 5 languages: Japanese, English, Simplified Chinese, Traditional Chinese, and Korean. Click [here](http://api.gnavi.co.jp/api/index_e.html) for the official API doc. You need an API key and ours is provided by default. To use your own, click [here](https://ssl.gnavi.co.jp/api/regist/?p=input) to register and obtain your own *key* first.
 
 Installation
 ------------
