@@ -12,7 +12,7 @@
 #' 
 #' @seealso \code{\link{get_areas}}, \code{\link{get_prefs}},
 #' \code{\link{get_bizsubcats}}.
-
+#' @keywords internal
 extract_simple = function(leaves, self, foreign = NULL) {
         # make tags to be used to extract embedded data values
         self_code = paste(self, "code", sep="_")

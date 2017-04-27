@@ -4,10 +4,7 @@
 #' Stop and print an error message if API call doesn't return 200 status code.
 #' 
 #' @param request Object returned by GET()
-#' 
-#' @return 
-#' Nothing.
-
+#' @keywords internal
 check_request = function(request) {
         # request: object returned by GET()
 

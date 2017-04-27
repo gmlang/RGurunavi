@@ -17,3 +17,4 @@ A parsed xml children object.
 \description{
 Used internally by all the exported functions.
 }
+\keyword{internal}

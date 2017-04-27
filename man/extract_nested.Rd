@@ -21,3 +21,4 @@ Used internally by get_areas_large(), get_areas_middle() and get_areas_small().
 \code{\link{get_areas_large}}, \code{\link{get_areas_middle}},
 \code{\link{get_areas_small}}.
 }
+\keyword{internal}

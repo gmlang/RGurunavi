@@ -20,3 +20,4 @@ Used internally by query_data().
 \seealso{
 \code{\link{query_data}}.
 }
+\keyword{internal}

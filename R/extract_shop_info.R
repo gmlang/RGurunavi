@@ -11,7 +11,7 @@
 #' A data frame of shop info extracted from XML file.
 #' 
 #' @seealso \code{\link{get_shops}}.
-
+#' @keywords internal
 extract_shop_info = function(leaves, lang="en") {
         # extract values
         id = xml2::xml_text(xml2::xml_find_all(leaves, "id"))

@@ -9,9 +9,7 @@ check_request(request)
 \arguments{
 \item{request}{Object returned by GET()}
 }
-\value{
-Nothing.
-}
 \description{
 Stop and print an error message if API call doesn't return 200 status code.
 }
+\keyword{internal}

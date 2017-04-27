@@ -21,3 +21,4 @@ Used internally by get_shops().
 \seealso{
 \code{\link{get_shops}}.
 }
+\keyword{internal}

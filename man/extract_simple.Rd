@@ -23,3 +23,4 @@ Used internally by get_areas(), get_prefs(), get_bizcats() and get_bizsubcats().
 \code{\link{get_areas}}, \code{\link{get_prefs}},
 \code{\link{get_bizsubcats}}.
 }
+\keyword{internal}

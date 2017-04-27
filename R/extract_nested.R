@@ -11,7 +11,7 @@
 #' 
 #' @seealso \code{\link{get_areas_large}}, \code{\link{get_areas_middle}},
 #' \code{\link{get_areas_small}}.
-
+#' @keywords internal
 extract_nested = function(leaves, size) {
         # make tags to be used to extract embedded data values
         self_code = paste("areacode", size, sep="_")
