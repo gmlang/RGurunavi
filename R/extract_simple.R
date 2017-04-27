@@ -1,13 +1,19 @@
-## author: gmlang
+#' @title Extracts values from simple flat data structure of a XML object.
+#' 
+#' @description
+#' Used internally by get_areas(), get_prefs(), get_bizcats() and get_bizsubcats().
+#' 
+#' @param leaves  Parsed xml children nodes object.
+#' @param self    string, node tag that wraps the actual data value.
+#' @param foreign string, node tag that wraps the actual data value.
+#' 
+#' @return
+#' A data frame of values extracted from XML file.
+#' 
+#' @seealso \code{\link{get_areas}}, \code{\link{get_prefs}},
+#' \code{\link{get_bizsubcats}}.
 
 extract_simple = function(leaves, self, foreign = NULL) {
-        # Extracts values from simple flat data structure of a XML object.
-        # Used by get_areas(), get_prefs(), get_bizcats() and get_bizsubcats().
-        #
-        # leaves : parsed xml children nodes object
-        # self   : string, node tag that wraps the actual data value
-        # foreign: string, node tag that wraps the actual data value
-
         # make tags to be used to extract embedded data values
         self_code = paste(self, "code", sep="_")
         self_name = paste(self, "name", sep="_")

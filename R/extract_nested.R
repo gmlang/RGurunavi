@@ -1,15 +1,19 @@
-## author: gmlang
+#' @title Extracts values from nested data structure of a XML object.
+#' 
+#' @description
+#' Used internally by get_areas_large(), get_areas_middle() and get_areas_small().
+#' 
+#' @param leaves Parsed xml children nodes object.
+#' @param self string of values "l", "m" or "s".
+#' 
+#' @return
+#' A data frame of values extracted from XML file.
+#' 
+#' @seealso \code{\link{get_areas_large}}, \code{\link{get_areas_middle}},
+#' \code{\link{get_areas_small}}.
 
 extract_nested = function(leaves, size) {
-        # Extracts values from nested data structure of a XML object.
-        # Used by get_areas_large(), get_areas_middle(), and get_areas_small().
-        #
-        # leaves : parsed xml children nodes object
-        # self   : string of values "l", "m" or "s"
-
         # make tags to be used to extract embedded data values
-        # leaves = xml_children
-        # size = "m"
         self_code = paste("areacode", size, sep="_")
         self_name = paste("areaname", size, sep="_")
         pref_code = "pref/pref_code"

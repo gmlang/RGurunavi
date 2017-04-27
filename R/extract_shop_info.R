@@ -1,15 +1,18 @@
-## author: gmlang
+#' @title Extracts shop info from nested data structure of a XML object.
+#' 
+#' @description
+#' Used internally by get_shops().
+#' 
+#' @param leaves Parsed xml children nodes object.
+#' @param lang   string, language of the returned data. Default = "en", can 
+#'               also take values of "ja", "zh_cn", "zh_tw", "ko".
+#' 
+#' @return
+#' A data frame of shop info extracted from XML file.
+#' 
+#' @seealso \code{\link{get_shops}}.
 
 extract_shop_info = function(leaves, lang="en") {
-        # Extracts values from nested data structure of a XML object.
-        # Used by get_areas_large(), get_areas_middle(), and get_areas_small().
-        #
-        # leaves : parsed xml children nodes object
-        # lang   : string, language of the returned data. Default = "en", can
-        #          also take values of "ja", "zh_cn", "zh_tw", "ko".
-
-        # leaves = xml_children
-
         # extract values
         id = xml2::xml_text(xml2::xml_find_all(leaves, "id"))
         update_date = xml2::xml_text(xml2::xml_find_all(leaves, "update_date"))

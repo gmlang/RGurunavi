@@ -1,9 +1,16 @@
-## author: gmlang
+#' @title Extracts values from simple flat data structure of a XML object.
+#' 
+#' @description
+#' Used internally by query_data().
+#' 
+#' @param base_url  string, base url of API.
+#' @param params    list of parameter values.
+#' 
+#' @return url of full API call.
+#' 
+#' @seealso \code{\link{query_data}}.
 
 make_APIcall = function(base_url, params) {
-        # base_url: string, base url of API
-        # params  : list of parameter values with parameters as names
-
         # replace all spaces with %20
         params = lapply(params, function(x) gsub(" ", "%20", x))
 

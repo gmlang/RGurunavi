@@ -1,12 +1,14 @@
-## author: gmlang
+#' @title Performs GET call to API and parses returned XML.
+#' 
+#' @description
+#' Used internally by all the exported functions.
+#' 
+#' @param base_url  string, base url of API.
+#' @param params    list of search parameters that will make up the URL of a full API call.
+#' 
+#' @return A parsed xml children object.
 
 query_data = function(base_url, params) {
-        # Performs GET call to API and parses returned XML.
-        # Returns a function.
-        #
-        # base_url: string, base url of API
-        # params  : list of search params that will make up API url
-
         # construct API call and GET data
         request = httr::RETRY("GET", url = make_APIcall(base_url, params))
         check_request(request)

@@ -23,7 +23,7 @@ Load it with:
 library(RGurunavi)
 ```
 
-Acquire Broad Areas 
+Acquire Broad Regions
 ``` r
 get_areas(lang="en")
 get_areas(lang="ja")

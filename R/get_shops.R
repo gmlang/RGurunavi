@@ -1,5 +1,43 @@
-## author: gmlang
-## depends on dplyr
+#' @title Implements the Multi-language version Restaurant Search API.
+#' 
+#' @description
+#' http://api.gnavi.co.jp/api/manual_e.html#api01
+#' 
+#' @param api_key string, your own Gurunavi API key. Ours has been provided
+#'                for convenience.
+#' @param lang    string, language of the returned data. Default = "en", can
+#'                also take values of "ja", "zh_cn", "zh_tw", "ko".
+#' @param pref    string, prefecture code.
+#' @param areacode_s string, small area code.
+#' @param category_l string, main biz category code 
+#' @param category_s string, biz sub-category code
+#' @param english_speaking 0 or 1, where 1 means Yes
+#' @param korean_speaking  0 or 1, where 1 means Yes
+#' @param chinese_speaking 0 or 1, where 1 means Yes
+#' @param english_menu     0 or 1, where 1 means Yes
+#' @param korean_menu      0 or 1, where 1 means Yes
+#' @param chinese_menu     0 or 1, where 1 means Yes
+#' @param vegetarian_menu  0 or 1, where 1 means Yes
+#' @param wifi             0 or 1, where 1 means Yes
+#' @param card             0 or 1, where 1 means Yes
+#' @param private_room     0 or 1, where 1 means Yes
+#' @param no_smoking       0 or 1, where 1 means Yes
+#' @param hit_per_page integer, number of shops listed on a page, default = 10
+#' @param offset_page  integer, search starting page, default = 1
+#' @param verbose      TRUE or FALSE, whether to print status messsages
+#' 
+#' @return
+#' A data frame of shop info.
+#' 
+#' @seealso \code{\link{query_data}}, \code{\link{extract_shop_info}}
+#' 
+#' @export
+#' @examples
+#' get_shops(lang = "en", pref = "PREF27", areacode_s = "AREAS3144", category_l = "RSFST02000", card = 1)
+#' get_shops(lang = "ja", pref = "PREF27", category_l = "RSFST02000", category_s = "RSFST02001")
+#' get_shops(lang = "zh_cn", pref = "PREF27", chinese_menu = 1, chinese_speaking = 1)
+#' get_shops(lang = "zh_tw", pref = "PREF27", chinese_menu = 1, wifi = 1, card = 1)
+#' get_shops(lang = "ko", pref = "PREF27", korean_speaking = 1, korean_menu = 1)
 
 get_shops = function(api_key = "eca7388c8a3c6332eb702a21bcc63b46",
                      lang = "en",
@@ -22,34 +60,7 @@ get_shops = function(api_key = "eca7388c8a3c6332eb702a21bcc63b46",
                      offset_page  = 1,
                      verbose = TRUE
                      ) {
-        # Implements the Multi-language version Restaurant Search API.
-        # Returns a data frame of shop info.
-        #
-        # api_key    : string, your own Gurunavi API key. Ours has been provided
-        #              for convenience.
-        # lang       : string, language of the returned data. Default = "en",
-        #              other possible values are "ja", "zh_cn", "zh_tw", "ko".
-        # pref       : string, prefecture code via the prefecture API.
-        # areacode_s : string, small area code via the acquire area small API.
-        # category_l : string, main biz category code via the acquire main
-        #              business category API.
-        # category_s : string, biz sub-category code via the acquire business
-        #              subcategory API.
-        # english_speaking  : 0 or 1, where 1 means Yes
-        # korean_speaking   : 0 or 1, where 1 means Yes
-        # chinese_speaking  : 0 or 1, where 1 means Yes
-        # english_menu      : 0 or 1, where 1 means Yes
-        # korean_menu       : 0 or 1, where 1 means Yes
-        # chinese_menu      : 0 or 1, where 1 means Yes
-        # vegetarian_menu   : 0 or 1, where 1 means Yes
-        # wifi: 0 or 1, where 1 means Yes
-        # card: 0 or 1, where 1 means Yes
-        # private_room: 0 or 1, where 1 means Yes
-        # no_smoking  : 0 or 1, where 1 means Yes
-        # hit_per_page: number of shops listed on a page, default = 10
-        # offset_page : search starting page, default = 1
-        # verbose: TRUE or FALSE, whether to print messsages
-
+        
         # set search parameters and base API url
         params = list(keyid = api_key, format = "xml", lang = lang, pref = pref,
                       areacode_s = areacode_s, category_l = category_l,
