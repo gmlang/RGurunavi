@@ -24,7 +24,8 @@ extract_nested = function(leaves, size) {
                 xml2::xml_text(xml2::xml_find_all(leaves, self_code)),
                 xml2::xml_text(xml2::xml_find_all(leaves, self_name)),
                 xml2::xml_text(xml2::xml_find_all(leaves, pref_code)),
-                xml2::xml_text(xml2::xml_find_all(leaves, pref_name))
+                xml2::xml_text(xml2::xml_find_all(leaves, pref_name)),
+                stringsAsFactors = F
                 )
         names(df) = c(self_code, self_name, gsub("pref/", "", pref_code),
                       gsub("pref/", "", pref_name))
