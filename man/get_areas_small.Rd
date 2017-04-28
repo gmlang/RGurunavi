@@ -18,7 +18,7 @@ A data frame of small, middle and large area codes and names and pref
 codes and names.
 }
 \description{
-http://api.gnavi.co.jp/api/manual_e.html#api06
+\url{http://api.gnavi.co.jp/api/manual_e.html#api06}
 }
 \examples{
 get_areas_small(lang = "en")

@@ -17,7 +17,7 @@ also take values of "ja", "zh_cn", "zh_tw", "ko".}
 A data frame of prefecture codes and names and area codes.
 }
 \description{
-http://api.gnavi.co.jp/api/manual_e.html#api03
+\url{http://api.gnavi.co.jp/api/manual_e.html#api03}
 }
 \examples{
 get_prefs(lang = "en")

@@ -1,7 +1,7 @@
 #' @title Implements the Acquire Area Large Master API.
 #' 
 #' @description
-#' http://api.gnavi.co.jp/api/manual_e.html#api04
+#' \url{http://api.gnavi.co.jp/api/manual_e.html#api04}
 #' 
 #' @param api_key string, your own Gurunavi API key. Ours has been provided
 #'                for convenience.

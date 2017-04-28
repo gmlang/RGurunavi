@@ -17,7 +17,7 @@ also take values of "ja", "zh_cn", "zh_tw", "ko".}
 A data frame of large area codes and names and pref codes and names.
 }
 \description{
-http://api.gnavi.co.jp/api/manual_e.html#api04
+\url{http://api.gnavi.co.jp/api/manual_e.html#api04}
 }
 \examples{
 get_areas_large(lang = "en")

@@ -17,7 +17,7 @@ also take values of "ja", "zh_cn", "zh_tw", "ko".}
 A data frame of area codes and names.
 }
 \description{
-http://api.gnavi.co.jp/api/manual_e.html#api02
+\url{http://api.gnavi.co.jp/api/manual_e.html#api02}
 }
 \examples{
 get_areas(lang="en")

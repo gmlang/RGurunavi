@@ -17,7 +17,7 @@ also take values of "ja", "zh_cn", "zh_tw", "ko".}
 A data frame of biz category codes and names.
 }
 \description{
-http://api.gnavi.co.jp/api/manual_e.html#api07
+\url{http://api.gnavi.co.jp/api/manual_e.html#api07}
 }
 \examples{
 get_bizcats(lang = "en")

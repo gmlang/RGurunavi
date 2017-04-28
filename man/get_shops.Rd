@@ -54,7 +54,7 @@ also take values of "ja", "zh_cn", "zh_tw", "ko".}
 A data frame of shop info.
 }
 \description{
-http://api.gnavi.co.jp/api/manual_e.html#api01
+\url{http://api.gnavi.co.jp/api/manual_e.html#api01}
 }
 \examples{
 get_shops(lang = "en", pref = "PREF27", areacode_s = "AREAS3144", category_l = "RSFST02000", card = 1)

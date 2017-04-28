@@ -1,7 +1,7 @@
 #' @title Implements the Acquire Business Category Master API.
 #' 
 #' @description
-#' http://api.gnavi.co.jp/api/manual_e.html#api07
+#' \url{http://api.gnavi.co.jp/api/manual_e.html#api07}
 #' 
 #' @param api_key string, your own Gurunavi API key. Ours has been provided
 #'                for convenience.

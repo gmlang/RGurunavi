@@ -1,7 +1,7 @@
 #' @title Implements the Multi-language version Restaurant Search API.
 #' 
 #' @description
-#' http://api.gnavi.co.jp/api/manual_e.html#api01
+#' \url{http://api.gnavi.co.jp/api/manual_e.html#api01}
 #' 
 #' @param api_key string, your own Gurunavi API key. Ours has been provided
 #'                for convenience.
