@@ -7,10 +7,10 @@
 #'                for convenience.
 #' @param lang    string, language of the returned data. Default = "en", can
 #'                also take values of "ja", "zh_cn", "zh_tw", "ko".
-#' @param pref    string, prefecture code.
-#' @param areacode_s string, small area code.
-#' @param category_l string, main biz category code 
-#' @param category_s string, biz sub-category code
+#' @param pref_code        string, prefecture code.
+#' @param areacode_s       string, small area code.
+#' @param category_l_code  string, main biz category code 
+#' @param category_s_code  string, biz sub-category code
 #' @param english_speaking 0 or 1, where 1 means Yes
 #' @param korean_speaking  0 or 1, where 1 means Yes
 #' @param chinese_speaking 0 or 1, where 1 means Yes
@@ -31,18 +31,17 @@
 #' 
 #' @export
 #' @examples
-#' get_shops(lang = "en", pref = "PREF27", areacode_s = "AREAS3144", category_l = "RSFST02000", card = 1)
-#' get_shops(lang = "ja", pref = "PREF27", category_l = "RSFST02000", category_s = "RSFST02001")
-#' get_shops(lang = "zh_cn", pref = "PREF27", chinese_menu = 1, chinese_speaking = 1)
-#' get_shops(lang = "zh_tw", pref = "PREF27", chinese_menu = 1, wifi = 1, card = 1)
-#' get_shops(lang = "ko", pref = "PREF27", korean_speaking = 1, korean_menu = 1)
+#' get_shops(lang = "en", pref_code = "PREF27", areacode_s = "AREAS3144", category_l_code = "RSFST02000", card = 1)
+#' get_shops(lang = "ja", pref_code = "PREF27", category_l_code = "RSFST02000", category_s_code = "RSFST02001")
+#' get_shops(lang = "zh_cn", pref_code = "PREF27", chinese_menu = 1, chinese_speaking = 1)
+#' get_shops(lang = "zh_tw", pref_code = "PREF27", chinese_menu = 1, wifi = 1, card = 1)
+#' get_shops(lang = "ko", pref_code = "PREF27", korean_speaking = 1, korean_menu = 1)
 
-get_shops = function(api_key = "eca7388c8a3c6332eb702a21bcc63b46",
-                     lang = "en",
-                     pref = "",
-                     areacode_s = "",
-                     category_l = "",
-                     category_s = "",
+get_shops = function(api_key = "eca7388c8a3c6332eb702a21bcc63b46", lang = "en",
+                     pref_code        = "",
+                     areacode_s       = "",
+                     category_l_code  = "",
+                     category_s_code  = "",
                      english_speaking = 0,
                      korean_speaking  = 0,
                      chinese_speaking = 0,
@@ -50,17 +49,19 @@ get_shops = function(api_key = "eca7388c8a3c6332eb702a21bcc63b46",
                      korean_menu      = 0,
                      chinese_menu     = 0,
                      vegetarian_menu  = 0,
-                     wifi = 0,
-                     card = 0,
-                     private_room = 0,
-                     no_smoking   = 1,
-                     verbose = TRUE
+                     wifi             = 0,
+                     card             = 0,
+                     private_room     = 0,
+                     no_smoking       = 1,
+                     verbose          = TRUE
                      ) {
         
         # set search parameters and base API url
-        params = list(keyid = api_key, format = "xml", lang = lang, pref = pref,
-                      areacode_s = areacode_s, category_l = category_l,
-                      category_s = category_s,
+        params = list(keyid = api_key, format = "xml", lang = lang, 
+                      pref = pref_code,
+                      areacode_s = areacode_s, 
+                      category_l = category_l_code,
+                      category_s = category_s_code,
                       english_speaking_staff = english_speaking,
                       korean_speaking_staff = korean_speaking,
                       chinese_speaking_staff = chinese_speaking,
