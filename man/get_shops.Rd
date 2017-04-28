@@ -9,7 +9,7 @@ get_shops(api_key = "eca7388c8a3c6332eb702a21bcc63b46", lang = "en",
   english_speaking = 0, korean_speaking = 0, chinese_speaking = 0,
   english_menu = 0, korean_menu = 0, chinese_menu = 0,
   vegetarian_menu = 0, wifi = 0, card = 0, private_room = 0,
-  no_smoking = 1, hit_per_page = 10, offset_page = 1, verbose = TRUE)
+  no_smoking = 1, verbose = TRUE)
 }
 \arguments{
 \item{api_key}{string, your own Gurunavi API key. Ours has been provided
@@ -47,10 +47,6 @@ also take values of "ja", "zh_cn", "zh_tw", "ko".}
 \item{private_room}{0 or 1, where 1 means Yes}
 
 \item{no_smoking}{0 or 1, where 1 means Yes}
-
-\item{hit_per_page}{integer, number of shops listed on a page, default = 10}
-
-\item{offset_page}{integer, search starting page, default = 1}
 
 \item{verbose}{TRUE or FALSE, whether to print status messsages}
 }

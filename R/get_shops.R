@@ -22,9 +22,7 @@
 #' @param card             0 or 1, where 1 means Yes
 #' @param private_room     0 or 1, where 1 means Yes
 #' @param no_smoking       0 or 1, where 1 means Yes
-#' @param hit_per_page integer, number of shops listed on a page, default = 10
-#' @param offset_page  integer, search starting page, default = 1
-#' @param verbose      TRUE or FALSE, whether to print status messsages
+#' @param verbose          TRUE or FALSE, whether to print status messsages
 #' 
 #' @return
 #' A data frame of shop info.
@@ -56,8 +54,6 @@ get_shops = function(api_key = "eca7388c8a3c6332eb702a21bcc63b46",
                      card = 0,
                      private_room = 0,
                      no_smoking   = 1,
-                     hit_per_page = 10,
-                     offset_page  = 1,
                      verbose = TRUE
                      ) {
         
@@ -75,7 +71,7 @@ get_shops = function(api_key = "eca7388c8a3c6332eb702a21bcc63b46",
                       vegetarian_menu_options = vegetarian_menu,
                       wifi = wifi, card = card, private_room = private_room,
                       no_smoking = no_smoking, sort = 1,
-                      hit_per_page = hit_per_page, offset_page = offset_page
+                      hit_per_page = 10, offset_page = 1
                       )
         base_url = "https://api.gnavi.co.jp/ForeignRestSearchAPI/20150630/"
 
