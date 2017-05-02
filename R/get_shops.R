@@ -81,24 +81,31 @@ get_shops = function(api_key = "eca7388c8a3c6332eb702a21bcc63b46", lang = "en",
 
         # extract meta stats
         tot_shops = as.integer(xml2::xml_text(xml_children[[1]]))
-        if (is.na(tot_shops))
-                stop("Can't find restaurants that meet your criteria. Relax your search criteria.")
-        # shops_per_page = as.integer(xml2::xml_text(xml_children[[2]]))
-        # start_page = as.integer(xml2::xml_text(xml_children[[3]]))
-        shops_per_page = 200
-        pages = ceiling(tot_shops / shops_per_page)
-
-        # bulk query and extract all data
-        lst_of_dfs = vector("list", length = pages)
-        params$hit_per_page = 200
-        for (i in 1:pages) {
-                if (verbose) print(paste0("Batch ", i, " of ", pages))
-                params$offset_page = i
-                xml_children = query_data(base_url, params)
-                lst_of_dfs[[i]] = extract_shop_info(xml_children, lang)
+        if (is.na(tot_shops)) {
+                return(switch(lang, 
+                       en = "Can't find restaurants that meet your criteria. Relax your search criteria.",
+                       zh_cn = "找不到您想要的，请放宽要求再搜寻。",
+                       zh_tw = "找不到您想要的，請放寬要求再搜尋。",
+                       ko = "Can't find restaurants that meet your criteria. Relax your search criteria."
+                       ))
+        } else {
+                # shops_per_page = as.integer(xml2::xml_text(xml_children[[2]]))
+                # start_page = as.integer(xml2::xml_text(xml_children[[3]]))
+                shops_per_page = 200
+                pages = ceiling(tot_shops / shops_per_page)
+                
+                # bulk query and extract all data
+                lst_of_dfs = vector("list", length = pages)
+                params$hit_per_page = 200
+                for (i in 1:pages) {
+                        if (verbose) print(paste0("Batch ", i, " of ", pages))
+                        params$offset_page = i
+                        xml_children = query_data(base_url, params)
+                        lst_of_dfs[[i]] = extract_shop_info(xml_children, lang)
+                }
+                
+                # rbind into a data frame and return
+                return(dplyr::bind_rows(lst_of_dfs))
         }
-
-        # rbind into a data frame and return
-        dplyr::bind_rows(lst_of_dfs)
 }
 
