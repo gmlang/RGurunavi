@@ -1,4 +1,4 @@
-#' @title Extracts values from simple flat data structure of a XML object.
+#' @title Construct the URL of the full API call.
 #' 
 #' @description
 #' Used internally by query_data().

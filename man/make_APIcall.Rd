@@ -2,7 +2,7 @@
 % Please edit documentation in R/make_APIcall.R
 \name{make_APIcall}
 \alias{make_APIcall}
-\title{Extracts values from simple flat data structure of a XML object.}
+\title{Construct the URL of the full API call.}
 \usage{
 make_APIcall(base_url, params)
 }
