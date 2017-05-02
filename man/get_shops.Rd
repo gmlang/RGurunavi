@@ -51,7 +51,7 @@ also take values of "ja", "zh_cn", "zh_tw", "ko".}
 \item{verbose}{TRUE or FALSE, whether to print status messsages}
 }
 \value{
-A data frame of shop info.
+A data frame of shop info or a warning message when cannot find any records.
 }
 \description{
 \url{http://api.gnavi.co.jp/api/manual_e.html#api01}
