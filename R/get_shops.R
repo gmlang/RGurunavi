@@ -83,10 +83,11 @@ get_shops = function(api_key = "eca7388c8a3c6332eb702a21bcc63b46", lang = "en",
         tot_shops = as.integer(xml2::xml_text(xml_children[[1]]))
         if (is.na(tot_shops)) {
                 return(switch(lang, 
-                       en = "Can't find restaurants that meet your criteria. Relax your search criteria.",
+                       en = "Can't find what you want. Relax your search criteria.",
+                       ja = "お探しの条件が見つかりませんでした。",
                        zh_cn = "找不到您想要的，请放宽要求再搜寻。",
                        zh_tw = "找不到您想要的，請放寬要求再搜尋。",
-                       ko = "Can't find restaurants that meet your criteria. Relax your search criteria."
+                       ko = "Can't find what you want. Relax your search criteria."
                        ))
         } else {
                 # shops_per_page = as.integer(xml2::xml_text(xml_children[[2]]))
